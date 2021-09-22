@@ -1,29 +1,29 @@
 public class TheCodeBreaker
 {
-    //this is a field
+    //This is my field. By putting the String variable here, I make it accessible for the whole class.
+    //It is private, so it is only accessible from this class.
     static String alphabet = "abcdefghijklmnopqrstuvwxuz";
 
-    //Because my main is static, everything else needs to be static too. Else it breaks.
+    //Because my main is static, everything else needs to be static too.
+    // static class means, you can call that method without instanciating that class (without creating an object of that class)
     public static void main(String[] args)
     {
-        char input = 'b';
-        System.out.println(characterToIndex(input));
+
+        System.out.println(characterToIndex('s'));
 
         indexToCharacter(5);
 
         ceasarCharacterEncoder('o');
-        //String test = alphabet.substring(2, alphabet.length());
-        //System.out.println(test.substring(test.length() - 1));
-
-        //System.out.println(test);
     }
 
+    //Method takes a character input and returns the number(int) position.
     public static int characterToIndex(char charIndex)
     {
-        //altid +1 for index hos alphabet
+        //+1 for the alphabet index as it needs to start at 1 and not 0.
         return alphabet.indexOf(charIndex) + 1;
     }
 
+    //Method takes a number(int) and returns the character position in our alphabet.
     public static char indexToCharacter(int numberIndex)
     {
         char result = alphabet.charAt(numberIndex);
@@ -31,13 +31,13 @@ public class TheCodeBreaker
         return result;
     }
 
-    // static class means, you can call that method without instanciating that class (without creating an object of that class)
     //Everytime I pass a parameter I need to put a type + name in there.
+    //Method takes a character and returns a character 3 positions forward in my alphabet.
     public static void ceasarCharacterEncoder(char characterToCharacter)
     {
         int number = characterToIndex(characterToCharacter);
 
-        //I want to know why it can't be 3 and without -1
+
         String test = alphabet.substring(number, number + 3);
         System.out.println(test.substring(test.length() - 1));
 
